@@ -43,4 +43,30 @@ typedef struct driver_handle {
 /** Private, used by the macro defined above. */
 pca9606_s configure_handle(pca9606_s);
 
+/** Public API */
+
+/** Set the given pin as an I/O output */
+void set_as_output(pca9606_s *h, int pin);
+
+/** Set the given pin as an I/O input */
+void set_as_input(pca9606_s *h, int pin);
+
+/** Set all pins as I/O outputs */
+void set_as_outputs(pca9606_s *h);
+
+/** Set all pins as I/O inputs */
+void set_as_inputs(pca9606_s *h);
+
+/** Read I/O data */
+void io_read(pca9606_s *h, int pin);
+
+/** Write I/O data */
+void io_write(pca9606_s *h, int pin, uint8_t value);
+
+/** Set output pins high */
+void set_high(pca9606_s *h);
+
+/** Set output pins low */
+void set_low(pca9606_s *h);
+
 #endif

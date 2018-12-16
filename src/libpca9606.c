@@ -21,3 +21,37 @@ pca9606_s configure_handle(pca9606_s driver){
     return driver;
 }
 
+/** Get/set I/O mode for the given pin(s) */
+
+void set_as_output(pca9606_s *h, int p) {
+    set_register_byte(h, IOC_REG, (uint8_t)p, 0xFF);
+}
+
+void set_as_input(pca9606_s *h, int p) {
+    set_register_byte(h, IOC_REG, (uint8_t)p, 0x00);
+}
+
+void set_as_outputs(pca9606_s *h) {
+    set_register_bytes(h, IOC_REG, 0xFF);
+}
+
+void set_as_inputs(pca9606_s *h) {
+    set_register_bytes(h, IOC_REG, 0x00);
+}
+
+void io_read(pca9606_s *h, int p) {
+    get_register_byte(h, IP_REG, (uint8_t)p);
+}
+
+void io_write(pca9606_s *h, int p, uint8_t v) {
+    set_register_byte(h, OP_REG, (uint8_t)p, v);
+}
+
+void set_high(pca9606_s *h) {
+    set_register_bytes(h, OP_REG, 0xFF);
+}
+
+void set_low(pca9606_s *h) {
+    set_register_bytes(h, OP_REG, 0x00);
+}
+

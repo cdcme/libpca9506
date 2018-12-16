@@ -18,3 +18,18 @@ void i2c_bus_write(pca9606_s *h, uint8_t r, uint8_t d) {
     h->data = d;
 }
 
+void set_register_byte(pca9606_s *h, uint8_t r, uint8_t n, uint8_t v){
+    i2c_bus_write(h, r + n, v);
+}
+
+void get_register_byte(pca9606_s *h, uint8_t r, uint8_t n){
+    i2c_bus_read(h, r + n);
+}
+
+void set_register_bytes(pca9606_s *h, uint8_t r, uint8_t v) {
+    i2c_bus_write(h, r, v);
+    i2c_bus_write(h, r + (uint8_t)1, v);
+    i2c_bus_write(h, r + (uint8_t)2, v);
+    i2c_bus_write(h, r + (uint8_t)3, v);
+    i2c_bus_write(h, r + (uint8_t)4, v);
+}

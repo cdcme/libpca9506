@@ -15,7 +15,7 @@ static void setup_cb(void *data) {
 /* Test setup ends here; tests begin */
 
 TEST expect_pass(void) {
-    PASS();
+    SKIP();
 }
 
 SUITE(test_register_ops) {
