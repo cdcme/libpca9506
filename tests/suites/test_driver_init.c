@@ -1,6 +1,6 @@
 #include "tests.h"
 
-static pca9606_s mock_driver;
+static pca9506_s mock_driver;
 
 static void setup_cb(void *data) {
     (void) data;
@@ -27,10 +27,22 @@ TEST expect_callback_identities(void) {
 }
 
 TEST expect_verifies_callbacks(void) {
-    pca9606_s mock_d = pca9606();
+    pca9506_s mock_d = pca9506();
     ASSERT_FALSE(mock_d.bus_reader && mock_d.bus_writer);
     ASSERT(mock_d.status != (char *) "ok");
     ASSERT_STR_EQ(mock_d.command, "cb_check");
+
+    PASS();
+}
+
+TEST expect_public_functions_to_be_present(void) {
+    ASSERT(mock_driver.read_bit_from_bank &&
+        mock_driver.set_bit_in_bank &&
+        mock_driver.clear_bit_in_bank &&
+        mock_driver.read_bank &&
+        mock_driver.set_bank &&
+        mock_driver.clear_bank
+    );
 
     PASS();
 }
@@ -54,6 +66,7 @@ SUITE (test_driver_init) {
     RUN_TEST(expect_callbacks_to_be_present);
     RUN_TEST(expect_callback_identities);
     RUN_TEST(expect_verifies_callbacks);
+    RUN_TEST(expect_public_functions_to_be_present);
     RUN_TEST(expect_command_to_be_i2c_write);
     RUN_TEST(expect_status_to_be_ok);
 }
