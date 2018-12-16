@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-pca9606_s configure_handle(pca9606_s driver){
+pca9606_s pca9606_configure_handle(pca9606_s driver){
     if(!(driver.bus_reader && driver.bus_writer)){
         driver.command = "cb_check";
         driver.status = "Invalid input: bus reader and bus writer callbacks are both required.";

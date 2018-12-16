@@ -7,19 +7,19 @@
  * \see https://github.com/torvalds/linux/blob/master/include/linux/i2c.h#L152
  */
 
-#ifndef LIBPCA9606_LIBRARY_H
-#define LIBPCA9606_LIBRARY_H
+#ifndef PCA9606_LIBRARY_H
+#define PCA9606_LIBRARY_H
 
 #include <inttypes.h>
 
 /** Initializes a driver_handle struct with values provided by the user. */
-#define pca9606(...) (configure_handle((pca9606_s){__VA_ARGS__}))
+#define pca9606(...) (pca9606_configure_handle((pca9606_s){__VA_ARGS__}))
 
 /** Primitive data type aliases for readability. */
 typedef const char *command, *status;
 
 /** Aggregate types */
-struct driver_handle;
+struct pca9606_driver_handle;
 
 /**
  * Types for the I2C bus read and write callbacks.
@@ -27,21 +27,21 @@ struct driver_handle;
  *
  * \see https://github.com/torvalds/linux/blob/master/include/linux/i2c.h#L152
  */
-typedef uint8_t (*i2c_bus_read_cb)(struct driver_handle *, uint8_t);
-typedef uint8_t (*i2c_bus_write_cb)(struct driver_handle *, uint8_t , uint8_t);
+typedef uint8_t (*pca9606_i2c_bus_read_cb)(struct pca9606_driver_handle *, uint8_t);
+typedef uint8_t (*pca9606_i2c_bus_write_cb)(struct pca9606_driver_handle *, uint8_t , uint8_t);
 
 /** Type definition for the driver handle */
-typedef struct driver_handle {
+typedef struct pca9606_driver_handle {
     uint8_t data;                  // Data last read/written
     uint8_t address;               // Last register read to/written from
     command command;               // Last command attempted
     status status;                 // Status (ok) or error message
-    i2c_bus_read_cb bus_reader;    // I2C Bus reader callback
-    i2c_bus_write_cb bus_writer;   // I2C Bus writer callback
+    pca9606_i2c_bus_read_cb bus_reader;    // I2C Bus reader callback
+    pca9606_i2c_bus_write_cb bus_writer;   // I2C Bus writer callback
 } pca9606_s;
 
 /** Private, used by the macro defined above. */
-pca9606_s configure_handle(pca9606_s);
+pca9606_s pca9606_configure_handle(pca9606_s);
 
 /** Public API */
 
