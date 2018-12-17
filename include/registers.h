@@ -23,8 +23,8 @@
 #define MSK_BASE 0x20
 
 /** Low-level access to user callback wrappers for initialization */
-void i2c_bus_read(pca9606_s *, uint8_t r);
-void i2c_bus_write(pca9606_s *, uint8_t r, uint8_t d);
+void pca9606_i2c_bus_read(pca9606_s *h, uint8_t r);
+void pca9606_i2c_bus_write(pca9606_s *h, uint8_t r, uint8_t d);
 
 /** Private utilities */
 void set_register_byte(pca9606_s *h, uint8_t r, uint8_t n, uint8_t v);
