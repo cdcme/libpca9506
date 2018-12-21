@@ -1,7 +1,7 @@
 #ifndef REGISTERS_LIBRARY_H
 #define REGISTERS_LIBRARY_H
 
-#include "libpca9606.h"
+#include "libpca9506.h"
 
 #include <inttypes.h>
 
@@ -23,15 +23,15 @@
 #define MSK_BASE 0x20
 
 /** Low-level access to user callback wrappers for initialization */
-void pca9606_i2c_bus_read(pca9606_s *h, uint8_t r);
-void pca9606_i2c_bus_write(pca9606_s *h, uint8_t r, uint8_t d);
+void pca9506_i2c_bus_read(pca9506_s *h, uint8_t r);
+void pca9506_i2c_bus_write(pca9506_s *h, uint8_t r, uint8_t d);
 
 /** Private utilities */
-void set_register_byte(pca9606_s *h, uint8_t r, uint8_t n, uint8_t v);
-void get_register_byte(pca9606_s *h, uint8_t r, uint8_t n);
+void set_register_byte(pca9506_s *h, uint8_t r, uint8_t n, uint8_t v);
+void get_register_byte(pca9506_s *h, uint8_t r, uint8_t n);
 
 /** Convenience to set all pins at once */
-void set_register_bytes(pca9606_s *h, uint8_t r, uint8_t v);
+void set_register_bytes(pca9506_s *h, uint8_t r, uint8_t v);
 
 #endif
 

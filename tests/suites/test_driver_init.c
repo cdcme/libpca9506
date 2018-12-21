@@ -1,6 +1,6 @@
 #include "tests.h"
 
-static pca9606_s mock_driver;
+static pca9506_s mock_driver;
 
 static void setup_cb(void *data) {
     (void) data;
@@ -27,7 +27,7 @@ TEST expect_callback_identities(void) {
 }
 
 TEST expect_verifies_callbacks(void) {
-    pca9606_s mock_d = pca9606();
+    pca9506_s mock_d = pca9506();
     ASSERT_FALSE(mock_d.bus_reader && mock_d.bus_writer);
     ASSERT(mock_d.status != (char *) "ok");
     ASSERT_STR_EQ(mock_d.command, "cb_check");

@@ -20,7 +20,7 @@ target_sources(test_runner
 find_library(THEFT_LIB theft)
 find_library(MATH_LIBRARY m)
 
-target_link_libraries(test_runner PUBLIC greatest ${MATH_LIBRARY} ${THEFT_LIB} libpca9606)
+target_link_libraries(test_runner PUBLIC greatest ${MATH_LIBRARY} ${THEFT_LIB} libpca9506)
 set_target_properties(test_runner PROPERTIES FOLDER test)
 
 add_test(test_runner test_runner)

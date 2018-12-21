@@ -2,7 +2,7 @@
 
 /* Test setup begin */
 
-static pca9606_s mock_driver;
+static pca9506_s mock_driver;
 static struct theft_run_config run_config;
 
 static void setup_cb(void *data) {

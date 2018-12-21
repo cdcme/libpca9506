@@ -1,6 +1,6 @@
-# libpca9606
+# libpca9506
 
-Driver for the NXP Semiconductors PCA9605/06 40-bit I2C-bus I/O port with RESET, OE and INT ([datasheet](https://github.com/minnowpod/libpca9606/tree/master/docs/PCA9605_06.pdf))
+Driver for the NXP Semiconductors PCA9605/06 40-bit I2C-bus I/O port with RESET, OE and INT ([datasheet](https://github.com/minnowpod/libpca9506/tree/master/docs/PCA9605_06.pdf))
 
 ## Features
 
@@ -21,12 +21,12 @@ Driver for the NXP Semiconductors PCA9605/06 40-bit I2C-bus I/O port with RESET,
 Example application code might look something like this:
 
 ```C
-#include "libpca9606.h"
+#include "libpca9506.h"
 
 }
 ```
 
-See also the included [examples](https://github.com/minnowpod/libpca9606/tree/master/examples).
+See also the included [examples](https://github.com/minnowpod/libpca9506/tree/master/examples).
 
 ## Who maintains this library?
 
@@ -34,12 +34,12 @@ This library is maintained by [Minnow](https://minnow.me/), an IoT startup that 
 
 ## How do I contribute?
 
-Contributions are welcome! Check out [CONTRIBUTING](https://github.com/minnowpod/libpca9606/tree/master/CONTRIBUTING.md) for instructions.
+Contributions are welcome! Check out [CONTRIBUTING](https://github.com/minnowpod/libpca9506/tree/master/CONTRIBUTING.md) for instructions.
 
 ## How is this library versioned?
 
 This library follows the principles of [Semantic Versioning](http://semver.org/). You can find each new release,
-along with the changelog, in the [CHANGELOG](https://github.com/minnowpod/libpca9606/tree/master/CHANGELOG.md).
+along with the changelog, in the [CHANGELOG](https://github.com/minnowpod/libpca9506/tree/master/CHANGELOG.md).
 
 During initial development, the major version will be 0 (e.g., `0.x.y`), which indicates the code does not yet have a
 stable API. Once we hit `1.0.0`, we will make every effort to maintain a backwards compatible API and use the MAJOR,
@@ -47,5 +47,5 @@ MINOR, and PATCH versions on each release to indicate any incompatibilities.
 
 ## License
 
-This code is released under the MIT License. Please see [LICENSE](https://github.com/minnowpod/libpca9606/tree/master/LICENSE) for more details.
+This code is released under the MIT License. Please see [LICENSE](https://github.com/minnowpod/libpca9506/tree/master/LICENSE) for more details.
 
