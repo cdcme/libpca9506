@@ -1,5 +1,5 @@
-target_sources(pca9606
+target_sources(pca9506
     PRIVATE
-        libpca9606.c
+        libpca9506.c
         registers.c
 )
