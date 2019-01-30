@@ -7,9 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 - TBD
 
-## v0.1.0
+## v0.2.0
 ### Added
-- TBD
+- Project setup, including:
+  - CMake setup
+  - Unit and property-based tests
+- Driver library, including:
+  - Interface for user-provided I2C read/write callbacks
+  - Basic data structure for the driver
+  - Definitions for key manufacturer register addresses and default values
+- Public API, including:
+  - Reading, setting, and clearing register bits
+  - Reading, setting, and clearing bank byte data
 - Documentation, including:
   - this CHANGELOG
   - [AUTHORS](https://github.com/minnowpod/libpca9506/tree/master/AUTHORS)

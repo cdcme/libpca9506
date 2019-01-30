@@ -79,14 +79,14 @@ struct pca9506_driver;
  *
  * \see https://github.com/torvalds/linux/blob/master/include/linux/i2c.h#L152
  */
-typedef u8 (*pca9506_i2c_bus_read_cb)(struct pca9506_driver *, u8);
-typedef u8 (*pca9506_i2c_bus_write_cb)(struct pca9506_driver *, u8 , u8);
+typedef u8 (*pca9506_i2c_bus_read_cb)(struct pca9506_driver *driver, u8 address);
+typedef u8 (*pca9506_i2c_bus_write_cb)(struct pca9506_driver *driver, u8 address, u8 data);
 
 /** Public API function signatures */
-typedef void (*pca9506_fn)(struct pca9506_driver *);
-typedef uint (*pca9506_bit_read)(struct pca9506_driver *, u8 bank_address, uint bit_position);
-typedef void (*pca9506_bit_op)(struct pca9506_driver *, u8 bank_address, uint bit_position);
-typedef void (*pca9506_bank_op)(struct pca9506_driver *, u8 bank_address);
+typedef void (*pca9506_fn)(struct pca9506_driver *driver);
+typedef uint (*pca9506_bit_read)(struct pca9506_driver *driver, u8 bank_address, uint bit_position);
+typedef void (*pca9506_bit_op)(struct pca9506_driver *driver, u8 bank_address, uint bit_position);
+typedef void (*pca9506_bank_op)(struct pca9506_driver *driver, u8 bank_address);
 
 /** Type definition for the driver handle */
 typedef struct pca9506_driver {
