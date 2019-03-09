@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(libpca9506 VERSION 1.0.0
+project(libpca9506 VERSION 0.2.1
         DESCRIPTION "Driver for the NXP Semiconductors PCA9505/06 40-bit I2C-bus I/O port with RESET, OE and INT"
         LANGUAGES C)
 
@@ -23,3 +23,6 @@ if(TESTING)
     enable_testing()
     add_subdirectory(tests)
 endif()
+
+install(TARGETS pca9506 DESTINATION lib)
+install(FILES include/pca9506.h DESTINATION include)

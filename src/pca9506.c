@@ -1,4 +1,4 @@
-#include "libpca9506.h"
+#include "pca9506.h"
 #include "registers.h"
 
 #include <stdio.h>

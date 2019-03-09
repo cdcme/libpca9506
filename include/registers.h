@@ -1,7 +1,7 @@
 #ifndef PCA9506_REGISTERS_H
 #define PCA9506_REGISTERS_H
 
-#include "libpca9506.h"
+#include "pca9506.h"
 
 #include <inttypes.h>
 

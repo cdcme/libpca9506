@@ -4,7 +4,7 @@
 #include "greatest.h"
 #include "theft.h"
 
-#include "libpca9506.h"
+#include "pca9506.h"
 #include "registers.h"
 
 typedef struct mock_register {
