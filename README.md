@@ -18,17 +18,32 @@ C driver for the NXP Semiconductors PCA9506/06 40-bit I2C-bus I/O port with RESE
 
 ## Installation
 
-The simplest way to install the library into your own CMake project at the moment is to add it as a git submodule like this:
+**Option 1:** add it as a git submodule like this:
 
 ```shell
-// clone the repo
+$ git clone git@github.com:minnowpod/libpca9506.git vendor/libpca9506
+```
+
+Then, add it in your `CMakeLists.txt` and link your library or executable:
+```cmake
+add_subdirectory(vendor/libpca9506)
+target_link_libraries(my_lib pca9506)
+```
+
+**Option 2:** install it like this:
+
+```shell
 $ git clone git@github.com:minnowpod/libpca9506.git && cd libpca9506
+$ cmake -DCMAKE_BUILD_TYPE=Release -DTESTING=OFF -G "Unix Makefiles" -S . -B cmake-build-release
+$ cd cmake-build-release
+$ make && sudo make install 
+```
 
-// check out the most recent tag to a branch
-$ git checkout tags/v0.2.0 -b v0.2.0
+Then, add it in your `CMakeLists.txt` and link your library or executable:
 
-// in your project, add it as a submodule
-$ git submodule add -b v0.2.0 ../../../libpca9506 vendor/libpca9506
+```cmake
+find_library(PCA9506 pca9506)
+target_link_libraries(my_lib ${PCA9506})
 ```
 
 ## Usage

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 - TBD
 
+## v0.2.1
+- Make installable
 ## v0.2.0
 ### Added
 - Project setup, including:
