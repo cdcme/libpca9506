@@ -1,6 +1,6 @@
 # libpca9506
 
-C driver for the NXP Semiconductors PCA9506/06 40-bit I2C-bus I/O port with RESET, OE and INT ([datasheet](https://github.com/minnowpod/libpca9506/tree/master/docs/PCA9506_06.pdf))
+C driver for the NXP Semiconductors PCA9506/06 40-bit I2C-bus I/O port with RESET, OE and INT ([datasheet](https://github.com/carlodicelico/libpca9506/tree/master/docs/PCA9506_06.pdf))
 
 ## Features
 
@@ -21,7 +21,7 @@ C driver for the NXP Semiconductors PCA9506/06 40-bit I2C-bus I/O port with RESE
 **Option 1:** add it as a git submodule like this:
 
 ```shell
-$ git clone git@github.com:minnowpod/libpca9506.git vendor/libpca9506
+$ git clone git@github.com:carlodicelico/libpca9506.git vendor/libpca9506
 ```
 
 Then, add it in your `CMakeLists.txt` and link your library or executable:
@@ -33,7 +33,7 @@ target_link_libraries(my_lib pca9506)
 **Option 2:** install it like this:
 
 ```shell
-$ git clone git@github.com:minnowpod/libpca9506.git && cd libpca9506
+$ git clone git@github.com:carlodicelico/libpca9506.git && cd libpca9506
 $ cmake -DCMAKE_BUILD_TYPE=Release -DTESTING=OFF -G "Unix Makefiles" -S . -B cmake-build-release
 $ cd cmake-build-release
 $ make && sudo make install 
@@ -130,20 +130,16 @@ int main(int argc, char **argv) {
 }
 ```
 
-See also the included [examples](https://github.com/minnowpod/libpca9506/tree/master/examples).
-
-## Who maintains this library?
-
-This library is maintained by [Minnow](https://minnow.me/), an IoT startup that makes smart food pickup kiosks called pods.
+See also the included [examples](https://github.com/carlodicelico/libpca9506/tree/master/examples).
 
 ## How do I contribute?
 
-Contributions are welcome! Check out [CONTRIBUTING](https://github.com/minnowpod/libpca9506/tree/master/CONTRIBUTING.md) for instructions.
+Contributions are welcome! Check out [CONTRIBUTING](https://github.com/carlodicelico/libpca9506/tree/master/CONTRIBUTING.md) for instructions.
 
 ## How is this library versioned?
 
 This library follows the principles of [Semantic Versioning](http://semver.org/). You can find each new release,
-along with the changelog, in the [CHANGELOG](https://github.com/minnowpod/libpca9506/tree/master/CHANGELOG.md).
+along with the changelog, in the [CHANGELOG](https://github.com/carlodicelico/libpca9506/tree/master/CHANGELOG.md).
 
 During initial development, the major version will be 0 (e.g., `0.x.y`), which indicates the code does not yet have a
 stable API. Once we hit `1.0.0`, we will make every effort to maintain a backwards compatible API and use the MAJOR,
@@ -151,5 +147,5 @@ MINOR, and PATCH versions on each release to indicate any incompatibilities.
 
 ## License
 
-This code is released under the MIT License. Please see [LICENSE](https://github.com/minnowpod/libpca9506/tree/master/LICENSE) for more details.
+This code is released under the MIT License. Please see [LICENSE](https://github.com/carlodicelico/libpca9506/tree/master/LICENSE) for more details.
 
